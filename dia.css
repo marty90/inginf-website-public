@@ -1,0 +1,23 @@
+body {
+    background-color: white;
+}
+
+.app-header {
+    background-color: #d4d0bc;
+}
+
+.app-header-title {
+    color: #800000;
+}
+
+a {
+    color: #1f3d5a;
+}
+
+a:hover {
+    color: #800000;
+}
+
+.card-title a {
+    color: #800000;
+}
