@@ -1,3 +1,11 @@
+main.app-container {
+  margin-left: 19rem;
+}
+
+header.app-header {
+  padding: 2em;
+}
+
 .col-md-4 {
   width: 33.33333333%;
   position: relative;
@@ -37,6 +45,9 @@
   position: relative;
 }
 
+h1, h1.post-title, h2 {
+  color: #800000;
+}
 
 .badge {
     display: inline-block;
@@ -74,6 +85,10 @@
   border-radius: 0.25rem;
   min-height: 705px;
   margin-bottom: 1.1em;
+}
+
+.mb-12.card {
+  min-height: 300px
 }
 
 .card.student {
@@ -125,6 +140,10 @@ span.badge.badge-secondary {
   object-fit: contain;
   height: 300px;
   background-color: #1f3d5a;
+}
+
+.mb-12 div.card-img-top {
+  height: 50px;
 }
 
 .card-body {
