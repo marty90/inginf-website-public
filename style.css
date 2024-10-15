@@ -2,6 +2,11 @@ body {
   color: #1f3d5a;
 }
 
+a {
+  color: #800000;
+  text-decoration: underline;
+}
+
 main.app-container {
   margin-left: 19rem;
 }
