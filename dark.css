@@ -1,0 +1,31 @@
+h1,
+h1.post-title,
+h2 {
+  color: #fff;
+}
+
+.card {
+    background-color: #242930;
+}
+
+.card-img-top {
+    background-color: #57cc8a;
+}
+
+.card span.badge a {
+    color: white;
+    text-decoration: none;
+}
+
+.card div.card-img-top h3 {
+  margin: 0.5em 1em 0 1em;
+}
+
+.card div.card-img-top h3 a {
+  color: white;
+  text-decoration: none;
+}
+
+span.badge.badge-secondary {
+    background-color: #57cc8a;
+}

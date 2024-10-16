@@ -1,23 +1,45 @@
 body {
-    background-color: white;
+  background-color: white;
+  color: #1f3d5a;
 }
 
 .app-header {
-    background-color: #d4d0bc;
+  background-color: #d4d0bc;
 }
 
 .app-header-title {
-    color: #800000;
+  color: #800000;
 }
 
 a {
-    color: #1f3d5a;
+  color: #1f3d5a;
+  text-decoration: underline;
 }
 
 a:hover {
-    color: #800000;
+  color: #800000;
 }
 
 .card-title a {
-    color: #800000;
+  color: #800000;
+}
+
+h1,
+h1.post-title,
+h2 {
+  color: #800000;
+}
+
+.card span.badge a {
+    color: white;
+    text-decoration: none;
+}
+
+.card div.card-img-top h3 {
+  margin: 0.5em 1em 0 1em;
+}
+
+.card div.card-img-top h3 a {
+  color: white;
+  text-decoration: none;
 }

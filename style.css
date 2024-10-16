@@ -1,11 +1,3 @@
-body {
-  color: #1f3d5a;
-}
-
-a {
-  color: #800000;
-  text-decoration: underline;
-}
 
 main.app-container {
   margin-left: 19rem;
@@ -52,10 +44,6 @@ header.app-header {
   margin-left: 0px;
   margin-right: 0px;
   position: relative;
-}
-
-h1, h1.post-title, h2 {
-  color: #800000;
 }
 
 .badge {
