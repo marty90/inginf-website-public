@@ -173,3 +173,16 @@ nav li a:hover, nav li a.active {
     transform: scale(1) translateY(0);
     animation: none;
   }
+
+
+@media (max-width: 600px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards-grid.labs img {
+    display: block;
+    width: 96%;
+    margin: 2%;
+}
+}
