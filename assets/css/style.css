@@ -1,0 +1,278 @@
+/* ====== STILI BASE GENERALI ====== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* Nasconde il contenuto finché Vue non è montato (opzionale ma carino) */
+/* [v-cloak] {
+  display: none;
+} */
+
+h1, nav {
+  font-family: "Pixelify Sans", system-ui, sans-serif;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+
+nav ul {
+    border-top: 4px solid #111827;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline-block;
+    padding-right: 0.9rem;
+    font-size: 1.5em;
+}
+
+nav li a {
+    text-decoration: none;
+    color: #111827;
+}
+
+nav li a:hover, nav li a.active {
+    text-decoration: underline;
+}
+
+.team-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+/* Quando l’intro è finita (o skippata), aggiungi questa classe da Vue */
+.team-page.intro-skipped {
+  /* nessun effetto particolare qui, ma la usiamo per gli override sotto */
+}
+
+.team-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.team-title {
+  font-family: "Pixelify Sans", system-ui, sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+/* ====== BOTTONE SKIP ====== */
+
+.skip-button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: #111827;
+  color: white;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
+}
+
+.skip-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.45);
+  background: #020617;
+}
+
+.skip-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.35);
+}
+
+/* ====== GRIGLIA DELLE CARD ====== */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.cards-grid.labs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* ====== CARD PERSONA + ANIMAZIONE INTRO ====== */
+
+.person-card {
+  position: relative;
+  border-radius: 1rem;
+  padding: 1.2rem 1.3rem;
+  background: #f9fafb;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+
+  /* Stato iniziale in animazione */
+  /* opacity: 0;
+  transform: scale(0.4) translateY(40px);
+  transform-origin: center;
+  animation: cardIntroOverlay 2.2s ease-out forwards;
+  animation-fill-mode: forwards;
+  z-index: 1; */
+}
+
+/* Titoli e testi nella card */
+
+.person-card__name {
+  font-family: "Pixelify Sans", system-ui, sans-serif;
+  font-size: 1.6em;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 0.2rem;
+}
+
+.person-card__role {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4b5563;
+  margin: 0 0 0.4rem;
+}
+
+.person-card__bio {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #6b7280;
+  margin: 0;
+}
+
+.person-card__image {
+  display: inline-block;
+  width: 45%;
+}
+
+.person-card__info {
+  font-family: "Exo 2";
+  display: inline-block;
+  width: 52%;
+  padding: 2%;
+}
+
+.person-card__image {
+  width: 40%;
+  margin-right: 5%;
+  object-fit: cover;
+
+  border: 4px solid #111827;
+  box-shadow: 4px 4px 0 #111827, 8px 8px 0 #4b5563, 12px 12px 0 #9ca3af;
+}
+
+.cards-grid.labs img {
+    float: left;
+    width: 25%;
+    margin-right: 5%;
+}
+/* ====== TIMING: una card alla volta ====== */
+/* Regola i delay in base a quante persone hai (qui 7) */
+/*
+.person-card:nth-child(1) {
+  animation-delay: 0s;
+}
+.person-card:nth-child(2) {
+  animation-delay: 2.2s;
+}
+.person-card:nth-child(3) {
+  animation-delay: 4.4s;
+}
+.person-card:nth-child(4) {
+  animation-delay: 6.6s;
+}
+.person-card:nth-child(5) {
+  animation-delay: 8.8s;
+}
+.person-card:nth-child(6) {
+  animation-delay: 11s;
+}
+.person-card:nth-child(7) {
+  animation-delay: 13.2s;
+}
+*/
+/* ====== HOVER NEL MOSAICO FINALE ====== */
+
+/* .team-page.intro-skipped .person-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.team-page.intro-skipped .person-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+} */
+
+/* ====== KEYFRAMES: ENTRA GRANDE, POI SI ASSESTA ====== */
+
+/* @keyframes cardIntroOverlay {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) translateY(40px);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.6) translateY(0);
+    z-index: 5; 
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.6) translateY(0); 
+    z-index: 5;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0); /
+    z-index: 1;
+  }
+} */
+
+/* ====== SKIP: SALTA ANIMAZIONE, MOSTRA MOSAICO DIRETTO ====== */
+
+.team-page.intro-skipped .person-card {
+  opacity: 1 !important;
+  transform: scale(1) translateY(0) !important;
+  animation: none !important;
+}
+
+.cards-grid.labs .person-card {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+.cards-grid .person-card {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    animation: none;
+  }
+
+/* ====== ACCESSIBILITÀ: RIDUCI ANIMAZIONI SE L'UTENTE LO CHIEDE ====== */
+
+/* @media (prefers-reduced-motion: reduce) {
+  .person-card {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+} */
