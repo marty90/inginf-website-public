@@ -14,14 +14,10 @@ body {
   color: #111827;
 }
 
-/* Nasconde il contenuto finché Vue non è montato (opzionale ma carino) */
-/* [v-cloak] {
-  display: none;
-} */
 
 h1, nav {
   font-family: "Pixelify Sans", system-ui, sans-serif;
-  max-width: 1100px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -53,15 +49,11 @@ nav li a:hover, nav li a.active {
 }
 
 .team-page {
-  max-width: 1100px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 2rem 1.5rem 3rem;
 }
 
-/* Quando l’intro è finita (o skippata), aggiungi questa classe da Vue */
-.team-page.intro-skipped {
-  /* nessun effetto particolare qui, ma la usiamo per gli override sotto */
-}
 
 .team-header {
   display: flex;
@@ -76,32 +68,6 @@ nav li a:hover, nav li a.active {
   font-size: clamp(1.8rem, 3vw, 2.2rem);
   font-weight: 700;
   letter-spacing: 0.03em;
-}
-
-/* ====== BOTTONE SKIP ====== */
-
-.skip-button {
-  border: none;
-  border-radius: 999px;
-  padding: 0.5rem 1.1rem;
-  font-size: 0.9rem;
-  cursor: pointer;
-  background: #111827;
-  color: white;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.35);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-  white-space: nowrap;
-}
-
-.skip-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.45);
-  background: #020617;
-}
-
-.skip-button:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.35);
 }
 
 /* ====== GRIGLIA DELLE CARD ====== */
@@ -187,67 +153,7 @@ nav li a:hover, nav li a.active {
     width: 25%;
     margin-right: 5%;
 }
-/* ====== TIMING: una card alla volta ====== */
-/* Regola i delay in base a quante persone hai (qui 7) */
-/*
-.person-card:nth-child(1) {
-  animation-delay: 0s;
-}
-.person-card:nth-child(2) {
-  animation-delay: 2.2s;
-}
-.person-card:nth-child(3) {
-  animation-delay: 4.4s;
-}
-.person-card:nth-child(4) {
-  animation-delay: 6.6s;
-}
-.person-card:nth-child(5) {
-  animation-delay: 8.8s;
-}
-.person-card:nth-child(6) {
-  animation-delay: 11s;
-}
-.person-card:nth-child(7) {
-  animation-delay: 13.2s;
-}
-*/
-/* ====== HOVER NEL MOSAICO FINALE ====== */
 
-/* .team-page.intro-skipped .person-card {
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.team-page.intro-skipped .person-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
-} */
-
-/* ====== KEYFRAMES: ENTRA GRANDE, POI SI ASSESTA ====== */
-
-/* @keyframes cardIntroOverlay {
-  0% {
-    opacity: 0;
-    transform: scale(0.4) translateY(40px);
-  }
-  20% {
-    opacity: 1;
-    transform: scale(1.6) translateY(0);
-    z-index: 5; 
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.6) translateY(0); 
-    z-index: 5;
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0); /
-    z-index: 1;
-  }
-} */
-
-/* ====== SKIP: SALTA ANIMAZIONE, MOSTRA MOSAICO DIRETTO ====== */
 
 .team-page.intro-skipped .person-card {
   opacity: 1 !important;
@@ -266,13 +172,3 @@ nav li a:hover, nav li a.active {
     transform: scale(1) translateY(0);
     animation: none;
   }
-
-/* ====== ACCESSIBILITÀ: RIDUCI ANIMAZIONI SE L'UTENTE LO CHIEDE ====== */
-
-/* @media (prefers-reduced-motion: reduce) {
-  .person-card {
-    opacity: 1;
-    transform: none;
-    animation: none;
-  }
-} */
